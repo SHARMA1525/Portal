@@ -11,6 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// API Status Check
+app.get('/api', (req, res) => {
+    res.json({ message: "AssignFlow API is running smoothly!", status: "Connected" });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/assignments', assignmentRoutes);
 app.use('/api/submissions', submissionRoutes);
