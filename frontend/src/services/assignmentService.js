@@ -1,4 +1,5 @@
-const BASE_URL = '/api';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+console.log('Current API BASE_URL:', BASE_URL);
 
 const getHeaders = () => {
     const token = localStorage.getItem('token');
